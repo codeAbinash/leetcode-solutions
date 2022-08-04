@@ -1,0 +1,87 @@
+header{
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+header h1{
+    font-size: 1.5rem;
+}
+.searchDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.searchDiv input[type=search]{
+    width: 90%;
+    max-width: 500px;
+    padding: 15px 20px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 200ms border-color;
+    font-size: 0.85rem;
+}
+.searchDiv input[type=search]:focus{
+    border-color: var(--accent);
+}
+
+.midDiv{
+    display: flex;
+    justify-content: center;
+
+}
+
+.endDiv{
+    margin: 50px 0;
+    padding: 20px;
+}
+
+.endDiv .mainImage{
+    width: 70%;
+    max-width: 300px;
+    display: block;
+    margin: auto;
+}
+
+.endDiv p{
+    margin: 50px 30px;
+    color: #888;
+    font-size: 0.8rem;
+    /* margin-top: 50px; */
+}
+
+
+.code{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.code .allCodes{
+    width: 100%;
+    max-width: 500px;
+}
+
+.code .codeName{
+    width: 100%;
+    background-color: rebeccapurple;
+    height: 100px;
+}
+
+
+.code-txt{
+    background-color: #1c2027;
+    width: auto;
+    height: auto;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin: 10px 0;
+}
