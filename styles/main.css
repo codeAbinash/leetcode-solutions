@@ -27,7 +27,7 @@ header h1{
     font-size: 0.85rem;
 }
 .searchDiv input[type=search]:focus{
-    border-color: var(--accent);
+    border-color: var(--leetcode-color);
 }
 
 .midDiv{

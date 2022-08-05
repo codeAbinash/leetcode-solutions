@@ -1,2 +1,1 @@
-x = "Abinash"
-print(x)
+print("Hello World")
