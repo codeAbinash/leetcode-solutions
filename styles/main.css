@@ -20,7 +20,7 @@ header h1{
     width: 90%;
     max-width: 500px;
     padding: 15px 20px;
-    border: 1.5px solid #ccc;
+    border: 1.5px solid #aaa;
     border-radius: 5px;
     outline: none;
     transition: 200ms border-color;
@@ -43,14 +43,14 @@ header h1{
 
 .endDiv .mainImage{
     width: 70%;
-    max-width: 300px;
+    max-width: 250px;
     display: block;
     margin: auto;
 }
 
 .endDiv p{
     margin: 50px 30px;
-    color: #888;
+    color: #555;
     font-size: 0.8rem;
     /* margin-top: 50px; */
 }
@@ -66,6 +66,9 @@ header h1{
 .code .allCodes{
     width: 100%;
     max-width: 500px;
+}
+.code .allCodes p{
+    font-size: 0.9em;
 }
 
 .code .codeName{
