@@ -1,5 +1,5 @@
 import highligh from './prism.js'
-
+import debounce from './debounce.js'
 
 highligh()
 
@@ -7,7 +7,23 @@ let searchBox = document.getElementById('searchInput')
 let main = document.getElementById('allCodes')
 
 
-const fileExtensions = ['.c', '.js', '.cpp', '.py', '.java']
+const fileExtensions = ['.c', '.cpp', '.js', '.py', '.java', '.txt']
+const classNames = {
+    'c': 'clike',
+    'cpp': 'clike',
+    'java': 'java',
+    'js': 'js',
+    'py': 'py',
+    'txt': 'txt'
+}
+const langNames = {
+    'c': 'C',
+    'cpp': 'C++',
+    'java': 'Java',
+    'js': 'JavaScript',
+    'py': 'Python',
+    'txt': 'Description of'
+}
 const codeDOM = {}
 
 
@@ -19,33 +35,31 @@ fileExtensions.forEach(fileExtension => {
     codeDOM[codeType] = elem
     main.appendChild(elem)
 })
-searchBox.onkeyup = () => {
+
+
+searchBox.addEventListener("input", debounce(() => { searchFile() }, 500, false))
+function searchFile() {
     let searchStr = searchBox.value.trim().toLowerCase()
-    searchFile(searchStr)
-}
-
-function getClassName(fileExt) {
-    const classNames = {
-        'c': 'clike',
-        'cpp': 'clike',
-        'java': 'java',
-        'js': 'js',
-        'py': 'py',
+    if(searchStr.includes('leetcode.com')){
+        searchStr = searchStr.replace('https://leetcode.com/problems/','')
+        if(searchStr.includes('/'))
+            searchStr = searchStr.substring(0,searchStr.indexOf('/'))
     }
-    return classNames[fileExt]
-}
 
-function getLangName(fileExt) {
-    const langNames = {
-        'c': 'C',
-        'cpp': 'C++',
-        'java': 'Java',
-        'js': 'JavaScript',
-        'py': 'Python'
+    if (!searchStr) {
+        main.style.display = 'none'
+        return
     }
-    return langNames[fileExt]
+
+    main.style.display = 'block'
+    const fetchLink = './files/problems/' + searchStr
+    loadCodes(fetchLink)
 }
 
+
+function getClassName(fileExt) { return classNames[fileExt] }
+
+function getLangName(fileExt) { return langNames[fileExt] }
 
 
 function getDomText(text, codeType) {
@@ -60,11 +74,6 @@ function getDomText(text, codeType) {
 }
 
 
-
-function searchFile(filename = '') {
-    const fetchLink = './files/problems/' + filename
-    loadCodes(fetchLink)
-}
 function loadCodes(fetchLink,) {
     let loadPromises = []
     fileExtensions.forEach((fileExtension) => {
@@ -80,7 +89,7 @@ function loadCodes(fetchLink,) {
                 })
                 .then(([text, err]) => {
                     if (err) {
-                        codeDOM[codeType].innerHTML = `<p class='err'>${codeType} code not found</p>`
+                        codeDOM[codeType].innerHTML = `<p class='err'>${getLangName(codeType)} code not available</p>`
                         return
                     }
                     text.then((txt) => {
@@ -92,7 +101,7 @@ function loadCodes(fetchLink,) {
     })
 
     Promise.allSettled(loadPromises).then(() => {
-        highligh()
+        setTimeout(() => { highligh() }, 0);
     })
 }
 

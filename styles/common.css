@@ -12,7 +12,9 @@ body {
 .text-center{
     text-align: center;
 }
-
+.leetcode-color{
+    color: var(--leetcode-color);
+}
 .err {
     text-align: center;
     color: tomato;
@@ -20,4 +22,8 @@ body {
     padding: 10px 20px;
     background-color: #ff634710;
     border-radius: 5px;
+}
+a{
+    text-decoration: none;
+    color: dodgerblue;
 }

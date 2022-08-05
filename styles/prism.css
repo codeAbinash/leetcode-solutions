@@ -33,6 +33,10 @@ pre[class*="language-"] {
 	hyphens: none;
 	border-radius: inherit;
 }
+
+pre[class*="language-"] code{
+	font-size: 0.9em;
+}
 pre[class*="language-"] span{
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
