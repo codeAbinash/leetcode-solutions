@@ -67,10 +67,16 @@ header h1{
     width: 100%;
     max-width: 500px;
 }
-.code .allCodes p{
-    font-size: 0.9em;
-}
 
+.code .allCodes .err {
+    text-align: center;
+    color: tomato;
+    margin: 15px 0;
+    padding: 10px 20px;
+    background-color: #ff634710;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
 .code .codeName{
     width: 100%;
     background-color: rebeccapurple;

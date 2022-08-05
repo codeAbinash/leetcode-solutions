@@ -101,7 +101,7 @@ function loadCodes(fetchLink,) {
     })
 
     Promise.allSettled(loadPromises).then(() => {
-        setTimeout(() => { highligh() }, 0);
+        setTimeout(() => { highligh() }, 50);
     })
 }
 
