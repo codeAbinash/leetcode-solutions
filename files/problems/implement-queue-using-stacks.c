@@ -1,5 +1,3 @@
-#include "stdlib.h"
-
 typedef struct {
     int stack1[100], stack2[100];
     int index1, index2;

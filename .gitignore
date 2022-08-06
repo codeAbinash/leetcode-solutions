@@ -1,3 +1,6 @@
-.vscode
 **.exe
+**/.vscode
 **/current
+desktop.ini
+**/later
+**/test
