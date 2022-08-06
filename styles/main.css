@@ -13,7 +13,7 @@ header .headingDiv{
     place-items: center;
 }
 header h1 {
-    font-size: 1.45rem;
+    font-size: 1.4rem;
 }
 header img{
     height: 3rem;
@@ -31,7 +31,7 @@ header img{
     max-width: 500px;
     padding: 15px 10px 15px 20px;
     border: 1.5px solid #aaa;
-    border-radius: 5px;
+    border-radius: 7px;
     outline: none;
     transition: 200ms border-color;
     font-size: 0.85rem;
@@ -75,7 +75,7 @@ header img{
     /* margin-top: 50px; */
 }
 .endDiv p.desc{
-    color: #888;
+    color: #aaa;
 }
 pre[class*="language-"] code {
     font-size: 0.9em;
@@ -100,7 +100,7 @@ pre[class*="language-"] code {
     margin: 15px 0;
     padding: 10px 20px;
     background-color: #ff634710;
-    border-radius: 5px;
+    border-radius: 7px;
     font-size: 0.8em;
 }
 
@@ -111,7 +111,7 @@ pre[class*="language-"] code {
     height: auto;
     width: 100%;
     max-width: 700px;
-    border-radius: 5px;
+    border-radius: 7px;
     font-size: 0.9em;
     margin: 10px 0;
 }
