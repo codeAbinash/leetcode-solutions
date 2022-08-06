@@ -1,0 +1,27 @@
+{
+    "start_url" : ".",
+    "name": "Leetcode Problems and Solutions",
+    "short_name": "Leetcode Problem",
+    "display": "standalone",
+    "background_color": "#ffa116",
+    "description": "Solutions of Leetcode problems are available here. Just paste the link and get the solution",
+    "theme_color": "#fff",
+    "icons": [
+        {
+            "src": "./favicon.ico",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./favicon.ico",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "./favicon.ico",
+            "sizes": "196x196",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
