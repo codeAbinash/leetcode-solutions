@@ -56,6 +56,15 @@ function searchFile() {
     loadCodes(fetchLink)
 }
 
+searchBox.addEventListener('search', ()=>{
+    searchBox.blur()
+})
+searchBox.onkeydown = (e) => {
+    if (e.key === 'Escape') {
+        e.preventDefault();
+        searchBox.blur()
+    }
+}
 
 function getClassName(fileExt) { return classNames[fileExt] }
 
@@ -65,7 +74,7 @@ function getLangName(fileExt) { return langNames[fileExt] }
 function getDomText(text, codeType) {
     // let text = ``
     let txt = `
-    <p>${getLangName(codeType)} Code</p>
+    <p class="codeType">${getLangName(codeType)} Solution</p>
     <div class="code-txt">
         <pre class="language-${getClassName(codeType)}"><code>${text}</code></pre>
     </div>`

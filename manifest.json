@@ -1,9 +1,9 @@
 {
     "start_url" : ".",
     "name": "Leetcode Problems and Solutions",
-    "short_name": "Leetcode Problem",
+    "short_name": "Leetcode Problems",
     "display": "standalone",
-    "background_color": "#ffa116",
+    "background_color": "#fff",
     "description": "Solutions of Leetcode problems are available here. Just paste the link and get the solution",
     "theme_color": "#fff",
     "icons": [
