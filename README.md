@@ -1,4 +1,7 @@
 # Leetcode Solutions
+<p align="center" width="100%">
+    <img width="100%" src="./images/logo.png">
+</p>
 
 ## Code Contribution
 
