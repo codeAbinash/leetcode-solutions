@@ -1,3 +1,10 @@
+::-webkit-scrollbar-track{
+	background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+	background-color: var(--scrollbar-color);
+}
+
 header {
     height: var(--header-height);
     display: flex;
@@ -121,5 +128,11 @@ pre[class*="language-"] code {
 @media only screen and (max-width: 900px) {
     pre[class*="language-"] code {
         font-size: 0.85em;
+    }
+}
+@media only screen and (min-width: 900px) {
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
     }
 }

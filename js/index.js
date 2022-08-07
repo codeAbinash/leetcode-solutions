@@ -142,7 +142,7 @@ document.onkeydown = (e) => {keyPress(e)}
 
 
 if (windowWidth >= 900){
-    searchBar.placeholder += " (\" Shift + F \")"
+    searchBar.placeholder += " ( Shift + F )"
 }
 
 
