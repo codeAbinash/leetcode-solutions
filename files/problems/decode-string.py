@@ -3,7 +3,7 @@ class Solution:
         stack = []
 
         for i in range(len(s)):
-            if(s[i] != ']'):
+            if s[i] != ']':
                 stack.append(s[i])
             else:
                 str = ''

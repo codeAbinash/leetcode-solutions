@@ -1,4 +1,4 @@
-# Leetcode Problems
+# Leetcode Solutions
 
 ## Code Contribution
 
@@ -10,7 +10,7 @@ So the file name wil be `valid-anagram.extension`.
 
 In the place of `extension` there will be different types of extension based on the programming language, for example `valid-anagram.c` for C code, `valid-anagram.js` for JavaScript code etc.
 
-### Open Page : [Leetcode Problems WebPage](https://codeabinash.github.io/leetcode-problems/)
+### Open Page : [Leetcode Solutions WebPage](https://codeabinash.github.io/leetcode-solutions/)
 
 <p align="center" width="100%">
     <img width="50%" src="./images/illustration/code.png">
