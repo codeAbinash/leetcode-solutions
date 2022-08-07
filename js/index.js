@@ -101,7 +101,7 @@ function loadCodes(fetchLink,) {
                 })
                 .then(([text, err]) => {
                     if (err) {
-                        codeDOM[codeType].innerHTML = `<p class='err'>${getLangName(codeType)} code not available</p>`
+                        codeDOM[codeType].innerHTML = `<p class='err'>${getLangName(codeType)} solution not available</p>`
                         return
                     }
                     text.then((txt) => {
