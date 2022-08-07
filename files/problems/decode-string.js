@@ -21,5 +21,3 @@ var decodeString = function(s) {
     }
     return stack.join('')
 };
-
-console.log(['a','b','c','d'].join(''))

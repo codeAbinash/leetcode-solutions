@@ -104,11 +104,13 @@ pre[class*="language-"] code {
 .code .allCodes .err {
     text-align: center;
     color: tomato;
-    margin: 15px 0;
+    display: block;
+    margin: 15px auto;
     padding: 10px 20px;
     background-color: #ff634710;
     border-radius: 7px;
     font-size: 0.8em;
+    max-width: 500px;
 }
 
 
