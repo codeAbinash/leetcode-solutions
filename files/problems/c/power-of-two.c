@@ -4,8 +4,3 @@ bool isPowerOfTwo(int n) {
         n >>= 1;
     return n == 1;
 }
-
-int main() {
-    printf("%d", isPowerOfTwo(16));
-    return 0;
-}
