@@ -12,6 +12,8 @@
 
 ## Installation
 
+Fork the main repo
+
 ```
 $ git clone https://github.com/YOUR_USER_NAME/leetcode-solutions.git
 $ cd leetcode-solutions
@@ -20,9 +22,12 @@ $ cd files
 
 Inside the files directory make your language directory and paste your code, make sure your solution name is match our [Code of Contribution](#code-contribution)
 
-## Code Contribution
+# Code Contribution
 
----
+- Use meaningful variables name, because we don't know whats x and y you are using.
+- Leave a comment if you think your code `could be` hard to understand.
+- Your code must have Runtime and Space complexity.
+- Leave your social in the solution, it will help people connect with other people
 
 Example of valid solution naming:
 
@@ -32,3 +37,32 @@ Example of valid solution naming:
 3. search-in-sorted-array.py
 4. twosum-II.py
 ```
+
+Example of valid functin with valid naming:
+
+```
+FILE: twosum.py
+
+@USER_NAME
+Time: O(n)
+Space: O(n); where n is the number elements present in the array
+
+def two_sum(numArr, target):
+    seen = {}
+    for idx, val in enumerate(numArr):
+        compliment = target - val
+        if compliment in seen:
+            return [[seen[compliment]], idx]
+        seen[val] = idx
+
+    return [-1, -1]
+
+```
+
+---
+
+> ## Be a contributor
+>
+> Even if you have edited this README.md file or have just added one line of code, you are a contributor and you have helped the community, leave your name inside the [contributors.md](contributors.md) with your socials.
+
+Happy Coding!
