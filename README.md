@@ -49,10 +49,10 @@ Space: O(n); where n is the number elements present in the array
 
 def two_sum(numArr, target):
     seen = {}
-    for idx, val in enumerate(numArr):
+    for idx, val in enumerate(numArr): # loop with index, value
         compliment = target - val
         if compliment in seen:
-            return [[seen[compliment]], idx]
+            return [seen[compliment], idx] 
         seen[val] = idx
 
     return [-1, -1]
