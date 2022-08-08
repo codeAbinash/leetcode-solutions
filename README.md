@@ -22,9 +22,12 @@ $ cd files/problems
 
 Inside the problems directory make your language directory (e.g. `c`, `py`, `cpp`) then create a file and paste your code, make sure your solution name match our [Code of Contribution](#code-contribution)
 
-## Code Contribution
+# Code Contribution
 
----
+- Use meaningful variables name, because we don't know whats x and y you are using.
+- Leave a comment if you think your code `could be` hard to understand.
+- Your code must have Runtime and Space complexity.
+- Leave your social in the solution, it will help people connect with other people
 
 Example of valid solution naming:
 
@@ -35,25 +38,31 @@ Example of valid solution naming:
 4. twosum-II.py
 ```
 
-## Writing Code
-- If you want to give a solution of a code which is already uploaded, then edit the file and write your code at the end of the file.
-```cpp
-#include "iostream"
+Example of valid functin with valid naming:
 
-int main() {
-    std::cout << "Hello World";
-    return 0;
-}
-// By Anushka
-
-
-#include "iostream"
-using namespace std;
-
-int main() {
-    cout << "Hello World";
-    return 0;
-}
-// By Mohd Arsh Ali
 ```
-- Write your name at the end of the code.
+FILE: twosum.py
+
+@USER_NAME
+Time: O(n)
+Space: O(n); where n is the number elements present in the array
+
+def two_sum(numArr, target):
+    seen = {}
+    for idx, val in enumerate(numArr): # loop with index, value
+        compliment = target - val
+        if compliment in seen:
+            return [seen[compliment], idx] 
+        seen[val] = idx
+
+    return [-1, -1]
+
+```
+
+---
+
+> ## Be a contributor
+>
+> Even if you have edited this README.md file or have just added one line of code, you are a contributor and you have helped the community, leave your name inside the [contributors.md](contributors.md) with your socials.
+
+Happy Coding!
