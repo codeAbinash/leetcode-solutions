@@ -38,7 +38,7 @@ Example of valid solution naming:
 4. twosum-II.py
 ```
 
-Example of valid functin with valid naming:
+Example of valid function with valid naming:
 
 ```
 FILE: twosum.py
