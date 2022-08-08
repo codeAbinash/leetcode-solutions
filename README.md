@@ -12,15 +12,15 @@
 
 ## Installation
 
-Fork the main repo
+Fork this repo then do following things
 
 ```
 $ git clone https://github.com/YOUR_USER_NAME/leetcode-solutions.git
 $ cd leetcode-solutions
-$ cd files
+$ cd files/problems
 ```
 
-Inside the files directory make your language directory and paste your code, make sure your solution name is match our [Code of Contribution](#code-contribution)
+Inside the problems directory make your language directory (e.g. `c`, `py`, `cpp`) then create a file and paste your code, make sure your solution name match our [Code of Contribution](#code-contribution)
 
 # Code Contribution
 
