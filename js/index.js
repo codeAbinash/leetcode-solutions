@@ -25,9 +25,10 @@ const langNames = {
     'py': 'Python',
     'txt': 'Description of'
 }
+
+
+
 const codeDOM = {}
-
-
 
 fileExtensions.forEach(fileExtension => {
     const elem = document.createElement('div')
@@ -40,6 +41,7 @@ fileExtensions.forEach(fileExtension => {
 
 searchBar.addEventListener("input", debounce(() => { searchFile() }, 500, false))
 function searchFile() {
+    // perse data and detect the file name
     let searchStr = searchBar.value.trim().toLowerCase()
     if(searchStr.includes('leetcode.com')){
         searchStr = searchStr.replace('https://leetcode.com/problems/','')
@@ -52,6 +54,7 @@ function searchFile() {
         main.style.display = 'none'
         return
     }
+
     main.style.display = 'block'
     const fetchLink = './files/problems/' + searchStr
     loadCodes(fetchLink)
@@ -74,13 +77,32 @@ function getLangName(fileExt) { return langNames[fileExt] }
 
 function getDomText(text, codeType) {
     // let text = ``
-    let txt = `
-    <p class="codeType">${getLangName(codeType)} Solution</p>
-    <div class="code-txt">
-        <pre class="language-${getClassName(codeType)}"><code>${text}</code></pre>
-    </div>`
+    let elem = document.createElement('div')
+    elem.classList.add('language-container')
 
-    return txt
+    // Create heading 
+    let heading = document.createElement('p')
+    heading.classList.add('codeType')
+    heading.innerText = `${getLangName(codeType)} Solution`
+
+    // Code container
+    let codeContainer = document.createElement('div')
+    codeContainer.classList.add('code-txt')
+
+    // Pre -> code
+    let pre = document.createElement('pre')
+    pre.classList.add(`language-${getClassName(codeType)}`)
+
+    let code = document.createElement('code')
+    code.textContent = text;
+    
+    pre.appendChild(code)
+    codeContainer.appendChild(pre)
+    
+    elem.appendChild(heading)
+    elem.appendChild(codeContainer)
+    
+    return elem
 }
 
 
@@ -105,7 +127,8 @@ function loadCodes(fetchLink,) {
                         return
                     }
                     text.then((txt) => {
-                        codeDOM[codeType].innerHTML = getDomText(txt, codeType)
+                        codeDOM[codeType].innerHTML = ''
+                        codeDOM[codeType].appendChild(getDomText(txt, codeType))
                         found = true
                     })
                 })
@@ -141,9 +164,8 @@ document.onkeyup = (e) => {keyPress(e)}
 document.onkeydown = (e) => {keyPress(e)}
 
 
+
+// Change Placeholder in large screens
 if (windowWidth >= 900){
     searchBar.placeholder += " ( Shift + F )"
 }
-
-
-// searchBar.addEventListener("input", debounce(() => { filterSearch(searchBar.value) }, 300, false))
