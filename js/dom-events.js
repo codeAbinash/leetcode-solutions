@@ -19,12 +19,12 @@ export default function domEvents() {
     }
     document.onkeyup = (e) => { keyPress(e) }
     document.onkeydown = (e) => { keyPress(e) }
-    
-    
-    searchBar.addEventListener('search', ()=>{
+
+
+    searchBar.addEventListener('search', () => {
         searchBar.blur()
     })
-    
+
     searchBar.onkeydown = (e) => {
         if (e.key === 'Escape') {
             e.preventDefault();
@@ -34,8 +34,13 @@ export default function domEvents() {
 
     // Change Placeholder in large screens
     let windowWidth = window.innerWidth;
-    if (windowWidth >= 900){
+    if (windowWidth >= 900) {
         searchBar.placeholder += " ( Shift + F )"
     }
-    
+
+
+
+    searchBar.onclick = () => {
+        setTimeout(() => { searchBar.focus() }, 0);
+    }
 }
