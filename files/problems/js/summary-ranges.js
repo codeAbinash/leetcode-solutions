@@ -1,6 +1,6 @@
 // by @codeAbinash
-// Time Complesity : O(n)
-// Space Complesity : O(1)
+// Time Complexity : O(n)
+// Space Complexity : O(1)
 
 var summaryRanges = function (nums) {
     let arr = [], index
