@@ -2,7 +2,7 @@
 // Time Complexity : O(n)
 // Space Complexity : O(1)
 
-// The missing number is seriesSum - arraySum
+// The missing number is (seriesSum - arraySum)
 int missingNumber(int* nums, int numsSize){
     int sum = 0;
     for(int i = 0; i < numsSize; i++)
