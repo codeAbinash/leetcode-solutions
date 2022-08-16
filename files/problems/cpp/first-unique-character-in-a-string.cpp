@@ -30,7 +30,8 @@ public:
         
         for(int i=0;i<s.size();i++){
             if(mp[s[i]]!=INT_MAX){
-                /* if value corresponding to character is not equal to INT_MAX then we got                            first non repeating charcter     */
+                /* if value corresponding to character is not equal to INT_MAX then we got  
+				  first non repeating charcter     */
                 return mp[s[i]];
             }
         }
