@@ -1,3 +1,13 @@
+/*first unique character in a string */
+
+/* Time complexity O(n)
+   Space Complexity O(26)   */
+   
+   
+//       @aakash172
+
+
+
 class Solution {
 public:
     int firstUniqChar(string s) {
