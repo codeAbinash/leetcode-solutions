@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "scss": "^0.2.4"
+  },
+  "scripts": {
+    "scss watch": "npx sass --no-source-map --watch scss:css",
+    "scss watch compress": "npx sass --no-source-map --watch scss:css --style compressed",
+    "scss all": "npx sass --no-source-map scss:css",
+    "scss compress all": "npx sass --no-source-map scss:css --style compressed"
+  }
+}
