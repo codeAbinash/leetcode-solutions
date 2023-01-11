@@ -1,3 +1,7 @@
+// by @codeAbinash
+// Time Complexity : O(n)
+// Space Complexity : O(1n)
+
 class Solution {
    public:
     bool repeatedSubstringPattern(string s) {
