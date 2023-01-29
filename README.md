@@ -3,11 +3,11 @@
 [Live Website](https://codeabinash.github.io/leetcode-solutions/)
 
 <p align="center" width="100%">
-    <img width="100%" src="./images/logo.png">
+    <img width="100%" src="https://codeabinash.github.io/leetcode-solutions/images/logo.png">
 </p>
 
 <p align="center" width="100%">
-    <img width="40%" src="./images/illustration/code.png">
+    <img width="40%" src="https://codeabinash.github.io/leetcode-solutions/images/illustration/code.png">
 </p>
 
 ## Installation
