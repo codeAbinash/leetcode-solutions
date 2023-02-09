@@ -14,10 +14,10 @@
 
 Fork this repo then do following things
 
-```
-$ git clone https://github.com/YOUR_USER_NAME/leetcode-solutions.git
-$ cd leetcode-solutions
-$ cd files/problems
+```bash
+$ git clone "https://github.com/YOUR_USER_NAME/leetcode-solutions.git"
+$ cd "leetcode-solutions"
+$ cd "files/problems"
 ```
 
 Inside the problems directory make your language directory (e.g. `c`, `py`, `cpp`) then create a file and paste your code, make sure your solution name match our [Code of Contribution](#code-contribution)
@@ -40,7 +40,7 @@ Example of valid solution naming:
 
 Example of valid function with valid naming:
 
-```
+```python
 FILE: twosum.py
 
 @USER_NAME
