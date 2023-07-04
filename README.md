@@ -3,7 +3,7 @@
 [Live Website](https://codeabinash.github.io/leetcode-solutions-web/)
 
 <p align="center" width="100%">
-    <img width="100%" src="https://codeabinash.github.io/leetcode-solutions-web/images/banner.jpg">
+    <img width="100%" src="https://codeabinash.github.io/leetcode-solutions-web/images/banner-md.jpg">
 </p>
 
 ## Installation
