@@ -1,16 +1,16 @@
-void swap(int *a, int *b) {
-    int tmp = *a;
-    *a = *b;
-    *b = tmp;
-}
+// by @codeAntu
+// timecomplexity: O(n)
+// spacecomplexity: O(1)
+
 
 int removeElement(int* nums, int numsSize, int val){
-    int i = 0, j = numsSize - 1;
-    while (i <= j){
-        if (nums[i] == val)
-            swap(nums + i , nums + j--);
-        else
-            i++;
-    }
-    return j + 1;
+   int j = 0;
+      for (int i = 0; i < numsSize; i++)
+      {
+         if( nums[i] != val){
+            nums[j] =  nums[i];
+            j++;
+         }
+      }
+      return j;
 }
