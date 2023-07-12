@@ -1,11 +1,7 @@
-// A simple hello world program in Java
+// A simple hello world program in TypeScript
 
 
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!"); 
-    }
-}
+console.log("Hello World")
 
 
 // Search for Leetcode Solutions 

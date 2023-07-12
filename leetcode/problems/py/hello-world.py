@@ -1,4 +1,4 @@
-# A simple hello world program in python
+# A simple hello world program in Python
 
 
 print("Hello World")
