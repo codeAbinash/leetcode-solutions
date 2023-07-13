@@ -1,11 +1,17 @@
 // by @codeAbinash
-// Time Complexity : O(n)
-// Space Complexity : O(n)
+// Time : O(n)
+// Space : O(n)
 
+/**
+ * @param {number[]} arr
+ * @param {Function} fn
+ * @return {number[]}
+ */
 var filter = function (arr, fn) {
-   var result = [];
-   for (var i = 0; i < arr.length; i++)
+   const len = arr.length
+   const tArr = []
+   for (let i = 0; i < len; i++)
       if (fn(arr[i], i))
-         result.push(arr[i]);
-   return result;
+         tArr.push(arr[i])
+   return tArr
 };

@@ -1,6 +1,6 @@
 // by @codeAbinash
-// Time Complexity : O(n)
-// Space Complexity : O(n)
+// Time : O(n)
+// Space: O(n)
 
 /**
  * @param {number[]} arr
@@ -8,9 +8,9 @@
  * @return {number[]}
  */
 var map = function (arr, fn) {
-   const result = [];
-   for (let i = 0; i < arr.length; i++)
-      result.push(fn(arr[i], i))
-
-   return result
+   const len = arr.length
+   const tArr = []
+   for (let i = 0; i < len; i++)
+      tArr[i] = fn(arr[i], i)
+   return tArr
 };

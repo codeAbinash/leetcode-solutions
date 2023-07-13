@@ -2,7 +2,9 @@
 // Time : O(n)
 // Space : O(1)
 
-var compose = function (functions) {
+type F = (x: number) => number;
+
+function compose(functions: F[]): F {
    return function (x) {
       let val = x
       let len = functions.length
