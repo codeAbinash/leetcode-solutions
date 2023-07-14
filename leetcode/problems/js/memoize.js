@@ -1,15 +1,19 @@
 // by @codeAbinash
+// Time : O(1)
+// Space : O(n)
 
+/**
+ * @param {Function} fn
+ */
 function memoize(fn) {
-   const argsCache = new Map();
-
+   const cache = new Map()
    return function (...args) {
-      const argsStr = args.join(',')
-      if (argsCache.has(argsStr)) return argsCache.get(argsStr)
-      else {
-         const result = fn(...args)
-         argsCache.set(argsStr, result)
-         return result
-      }
+      let key = args.toString()
+      if (cache.has(key))
+         return cache.get(key)
+
+      const val = fn(...args)
+      cache.set(key, val)
+      return val
    }
 }
