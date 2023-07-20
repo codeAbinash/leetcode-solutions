@@ -2,21 +2,18 @@
 // Time Complexity : O(n)
 // Space Complexity : O(1)
 
-bool checkRecord(char *s) {
-    int absent = 0;
-    int late = 0;
-    char *p = s;
-    while (*p) {
-        char ch = *p;
-        if (late >= 3) return 0;
-        if (ch == 'A') {
-            absent++;
-            late = 0;
-        } else if (ch == 'L')
-            late++;
+bool checkRecord(char* s) {
+    int absentCount = 0;
+    int lateCount = 0;
+    for (int i = 0; s[i] != '\0';i++) {
+        if (lateCount >= 3) return 0;
+        if (s[i] == 'A') {
+            absentCount++;
+            lateCount = 0;
+        } else if (s[i] == 'L')
+            lateCount++;
         else
-            late = 0;
-        p++;
+            lateCount = 0;
     }
-    return absent < 2 && late < 3;
+    return absentCount < 2 && lateCount < 3;
 }
