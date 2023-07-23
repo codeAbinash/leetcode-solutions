@@ -1,9 +1,6 @@
 // by @codeAbinash
 
-/**
- * @return {Generator<number>}
- */
-var fibGenerator = function* () {
+function* fibGenerator(): Generator<number, any, number> {
    let a = 0;
    let b = 1;
    while (true) {

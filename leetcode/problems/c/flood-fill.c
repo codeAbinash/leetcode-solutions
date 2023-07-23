@@ -1,6 +1,5 @@
-void changeColor(int** image, int rowSize, int colSize, int row, int col, int color,
-          int newColor) {
-    if (row < 0 || row >= rowSize ||col < 0 || col >= colSize) return;
+void changeColor(int** image, int rowSize, int colSize, int row, int col, int color, int newColor) {
+    if (row < 0 || row >= rowSize || col < 0 || col >= colSize) return;
     if (image[row][col] != color) return;
 
     image[row][col] = newColor;
@@ -11,8 +10,7 @@ void changeColor(int** image, int rowSize, int colSize, int row, int col, int co
     changeColor(image, rowSize, colSize, row, col - 1, color, newColor);
 }
 
-int** floodFill(int** image, int imageSize, int* imageColSize, int sr, int sc,
-                int newColor, int* returnSize, int** returnColumnSizes) {
+int** floodFill(int** image, int imageSize, int* imageColSize, int sr, int sc, int newColor, int* returnSize, int** returnColumnSizes) {
     if (imageSize < 1 || *imageColSize < 1) return image;
 
     int** im = malloc(sizeof(int*) * imageSize);
