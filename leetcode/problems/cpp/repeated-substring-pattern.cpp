@@ -1,12 +1,17 @@
 // by @codeAbinash
-// Time Complexity : O(n)
-// Space Complexity : O(1n)
+
+#include "vector"
+#include "string"
+using namespace std;
 
 class Solution {
-   public:
-    bool repeatedSubstringPattern(string s) {
-        int size = s.size();
-        string str = s.substr(1, size - 1) + s.substr(0, size - 1);
-        return str.find(s) != -1;
-    }
+public:
+   bool repeatedSubstringPattern(string s) {
+      int n = s.length();
+      for (int i = n / 2; i >= 1; i--)
+         if (n % i == 0)
+            if (s.substr(0, n - i) == s.substr(i))
+               return true;
+      return false;
+   }
 };

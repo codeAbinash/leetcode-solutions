@@ -1,26 +1,20 @@
-// by @codeAntu
-// time complexity: O(n)
-// space complexity: O(1)
+// by @codeAbinash
+// Time : O(n)
+// Space : O(1)
 
+#include "string"
+using namespace std;
 
 class Solution {
 public:
    int strStr(string haystack, string needle) {
-      int ind = 0;
-      for (int i = 0; i < haystack.size(); i++){
-         if (haystack[i] == needle[0]){
-            ind = i;
-            for (int j = 0; j < needle.size(); j++){
-               if (haystack[ind] != needle[j]){
-                  ind = 0;
-                  break;
-               }
-               ind++;
-            }
-            if (ind != 0){
-               return i;
-            }  
-         }
+      int m = haystack.size(), n = needle.size();
+      if (n == 0) return 0;
+      for (int i = 0; i <= m - n; i++) {
+         int j;
+         for (j = 0; j < n; j++)
+            if (haystack[i + j] != needle[j]) break;
+         if (j == n) return i;
       }
       return -1;
    }
