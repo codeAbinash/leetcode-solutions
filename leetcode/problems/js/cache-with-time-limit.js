@@ -1,29 +1,21 @@
 // by @codeAbinash
 
-var TimeLimitedCache = function () {
-   this.cache = new Map()
+function TimeLimitedCache() {
+   this.cache = new Map();
 }
-
 TimeLimitedCache.prototype.set = function (key, value, duration) {
-   const isKeyPresent = this.cache.has(key)
-
-   if (isKeyPresent) {
-      const [_, time] = this.cache.get(key)
-      clearTimeout(time)
-   }
-
-   const time = setTimeout(() => this.cache.delete(key), duration)
-   this.cache.set(key, [value, time])
-   return isKeyPresent
+   const cacheVal = this.cache.get(key);
+   if (cacheVal)
+      clearTimeout(cacheVal.timeout)
+   const timeout = setTimeout(() => this.cache.delete(key), duration)
+   this.cache.set(key, { value, timeout })
+   return Boolean(cacheVal);
 }
 
 TimeLimitedCache.prototype.get = function (key) {
-   if (!this.cache.has(key)) return -1
-
-   const [value] = this.cache.get(key)
-   return value
-};
+   return this.cache.has(key) ? this.cache.get(key).value : -1
+}
 
 TimeLimitedCache.prototype.count = function () {
    return this.cache.size
-};
+}

@@ -1,9 +1,15 @@
 // by @codeAbinash
-// Time Complexity : O(1)
-// Space Complexity : O(1)
-
+// Time : O(1)
+// Space : O(1)
 
 Array.prototype.last = function () {
-   if (this.length === 0) return -1;
-   return this[this.length - 1];
+   const len = this.length
+   if(len)
+      return this[len - 1]
+   return -1
 };
+
+/**
+ * const arr = [1, 2, 3];
+ * arr.last(); // 3
+ */

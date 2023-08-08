@@ -1,6 +1,6 @@
 // by @codeAbinash
-// Time Complexity : O(n)
-// Space Complexity : O(1)
+// Time : O(n)
+// Space : O(1)
 
 var timeLimit = function (fn, t) {
    return async function (...args) {

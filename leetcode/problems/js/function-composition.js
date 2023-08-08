@@ -1,12 +1,14 @@
-/**
- * @param {Function[]} functions
- * @return {Function}
- */
+// by @codeAbinash
+// Time : O(n)
+// Space : O(1)
+
 var compose = function (functions) {
    return function (x) {
-      return functions.reduceRight((acc, fn) => fn(acc), x);
+      let val = x
+      let len = functions.length
+      while (len--) {
+         val = functions[len](val)
+      }
+      return val
    }
-};
-
-const fn = compose([x => x + 1, x => 2 * x])
-console.log(fn(4))
+}

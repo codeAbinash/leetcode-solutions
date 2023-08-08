@@ -1,4 +1,4 @@
-// A simple hello world program in java
+// A simple hello world program in Java
 
 
 class HelloWorld {

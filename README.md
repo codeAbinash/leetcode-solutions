@@ -2,9 +2,11 @@
 
 [Live Website](https://codeabinash.github.io/leetcode-solutions-web/)
 
+<a href="https://codeabinash.github.io/leetcode-solutions-web/" target="_blank">
 <p align="center" width="100%">
     <img width="100%" src="https://codeabinash.github.io/leetcode-solutions-web/images/banner-md.jpg">
 </p>
+</a>
 
 ## Installation
 
@@ -28,16 +30,16 @@ Inside the problems directory make your language directory (e.g. `c`, `py`, `cpp
 Example of valid solution naming:
 
 ```
-1. twosum.py
+1. two-sum.py
 2. move-zeros.py
 3. search-in-sorted-array.py
-4. twosum-II.py
+4. two-sum-II.py
 ```
 
 Example of valid function with valid naming:
 
 ```python
-FILE: twosum.py
+FILE: two-sum.py
 
 @USER_NAME
 Time: O(n)

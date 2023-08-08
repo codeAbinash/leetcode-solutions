@@ -1,20 +1,26 @@
-// by @CodeAntu
+// by @codeAbinash
+// Time : O(n)
+// Space : O(1)
 
-string addBinary(string a, string b) {
-   int carry = 0;
-   int i = a.length() - 1;
-   int j = b.length() - 1;
-   string ans;
+#include "string"
+using namespace std;
 
-   while (i >= 0 || j >= 0)
-   {
-      int sum = carry;
-      if (i >= 0) sum += a[i--] - '0';
-      if (j >= 0) sum += b[j--] - '0';
-      carry = sum > 1 ? 1 : 0;
-      ans += to_string(sum % 2);
+
+class Solution {
+public:
+   string addBinary(string a, string b) {
+      int a_len = a.length();
+      int b_len = b.length();
+      int carry = 0;
+      string ans;
+      while (a_len > 0 || b_len > 0 || carry > 0) {
+         if (a_len > 0) carry += a[--a_len] - '0';
+         if (b_len > 0) carry += b[--b_len] - '0';
+         ans.push_back(carry % 2 + '0');
+         carry /= 2;
+      }
+
+      reverse(begin(ans), end(ans));
+      return ans;
    }
-   if (carry)  ans += '1';
-   reverse(ans.begin(), ans.end());
-   return ans;
-}
+};
