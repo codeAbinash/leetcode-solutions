@@ -1,17 +1,21 @@
+// by @codeAbinash
+// Time : O(n)
+// Space : O(1)
+
+inline int sum(int* arr, int len) {
+   int sum = 0;
+   for (int i = 0; i < len; i++)
+      sum += arr[i];
+   return sum;
+}
+
 int pivotIndex(int* nums, int numsSize) {
-    int i,sum = 0;
-
-    for(i = 0; i < numsSize; i++)
-        sum += nums[i];
-
-    int leftSum = 0, rightSum = 0;
-    for(i = 0; i < numsSize; i++){
-        rightSum = sum - leftSum - nums[i];
-        if(leftSum == rightSum)
-            return i;
-        leftSum += nums[i];
-    }
-    if(i == numsSize) return -1;
-
-    return i;
+   int leftSum = 0, rightSum = sum(nums, numsSize);
+   for (int i = 0; i < numsSize; i++) {
+      leftSum += nums[i];
+      if (leftSum == rightSum)
+         return i;
+      rightSum -= nums[i];
+   }
+   return -1;
 }
