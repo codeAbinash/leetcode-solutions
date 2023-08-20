@@ -1,19 +1,29 @@
 // by @codeAbinash
-// Time Complexity : O(n)
-// Space Complexity : O(1)
+// Time : O(n)
+// Space : O(1)
+
+// Definition for singly-linked list.
+struct ListNode {
+   int val;
+   ListNode* next;
+   ListNode() : val(0), next(nullptr) {}
+   ListNode(int x) : val(x), next(nullptr) {}
+   ListNode(int x, ListNode* next) : val(x), next(next) {}
+};
 
 class Solution {
 public:
-    ListNode* deleteMiddle(ListNode* head) {
-        if(head == nullptr || head->next ==nullptr)
-            return nullptr;
-        ListNode * fast = head, *slow = head, *prev;
-        while(fast && fast->next ){
-            fast = fast->next->next;
-            prev = slow;
-            slow = slow->next;
-        }
-        prev->next = prev->next->next;
-        return head;
-    }
+   ListNode* deleteMiddle(ListNode* head) {
+      if (head == nullptr || head->next == nullptr) return nullptr;
+      ListNode* slow = head;
+      ListNode* fast = head;
+      ListNode* prev = nullptr;
+      while (fast != nullptr && fast->next != nullptr) {
+         prev = slow;
+         slow = slow->next;
+         fast = fast->next->next;
+      }
+      prev->next = slow->next;
+      return head;
+   }
 };
