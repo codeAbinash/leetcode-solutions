@@ -1,6 +1,4 @@
 // by @codeAbinash
-// Time : O(log n)
-// Space : O(1)
 
 struct TreeNode {
    int val;
@@ -12,11 +10,19 @@ struct TreeNode {
 };
 
 class Solution {
+   int count = 0;
 public:
-   TreeNode* searchBST(TreeNode* root, int val) {
-      if (root == nullptr) return nullptr;
-      if (root->val == val) return root;
-      if (root->val < val) return searchBST(root->right, val);
-      return searchBST(root->left, val);
+   int goodNodes(TreeNode* root) {
+      dfs(root, root->val);
+      return count;
+   }
+   void dfs(TreeNode* node, int currMax) {
+      if (!node) return;
+      if (node->val >= currMax) {
+         count++;
+         currMax = node->val;
+      }
+      dfs(node->left, currMax);
+      dfs(node->right, currMax);
    }
 };
