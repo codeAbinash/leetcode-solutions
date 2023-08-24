@@ -1,21 +1,24 @@
-// by @codeAntu 
-// time complexity: O(n)
-// space complexity: O(n)
+// by @codeAbinash
+// Time : O(n)
+// Space : O(n)
+
+#include "vector"
+#include "unordered_map"
+using namespace std;
 
 class Solution {
 public:
    vector<int> twoSum(vector<int>& nums, int target) {
-      unordered_map <int, int > map;
-      int rem;
-
-      for (int i = 0; i < nums.size(); i++)
-      {
-         rem = target - nums[i];
-         if (map.find(rem) != map.end())
-            return  {map[rem] , i};
-         else
-            map[nums[i]] = i;
+      unordered_map <int, int> map;
+      int i = 0;
+      for (auto num : nums) {
+         int t = target - num;
+         auto searched = map.find(t);
+         if (searched != map.end())
+            return  { (*searched).second , i };
+         map[nums[i]] = i;
+         i++;
       }
-      return { -1, -1 };
+      return { };
    }
 };

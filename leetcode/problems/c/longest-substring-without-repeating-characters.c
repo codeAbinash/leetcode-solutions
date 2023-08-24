@@ -1,17 +1,17 @@
-int lengthOfLongestSubstring(char *s) {
-    int hsah[128], i , start = - 1, maxLen = 0;
+// by @codeAbinash
+// Time : O(n)
+// Space : O(1)
 
-    for (i = 0; i < 128; i++) hsah[i] = -1;
-    i = 0;
-    while(s[i]){
-        if (hsah[s[i]] > start)
-            start = hsah[s[i]];
+int lengthOfLongestSubstring(char* s) {
+   bool set[128] = { 0 };
+   int left = 0, maxLen = 0, i = 0;
 
-        if(i - start > maxLen)
-            maxLen = i - start;
+   while (s[i++]) {
+      while (set[s[i - 1]])
+         set[s[left++]] = 0;
 
-        hsah[s[i]] = i;
-        i++;
-    }
-    return maxLen;
+      set[s[i - 1]] = 1;
+      if (i - left > maxLen) maxLen = i - left;
+   }
+   return maxLen;
 }
