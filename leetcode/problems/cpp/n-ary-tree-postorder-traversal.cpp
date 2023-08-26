@@ -1,19 +1,38 @@
 // by @codeAbinash
-// Time Complexity : O(n)
-// Space Complexity : O(n)
+// Time : O(n)
+// Space : O(n)
+
+#include "vector"
+using namespace std;
+
+class Node {
+public:
+   int val;
+   vector<Node*> children;
+
+   Node() {}
+
+   Node(int _val) {
+      val = _val;
+   }
+
+   Node(int _val, vector<Node*> _children) {
+      val = _val;
+      children = _children;
+   }
+};
 
 class Solution {
-   public:
-    vector<int> trav;
-    void post_order(Node* root) {
-        if (root == NULL) return;
-        for (auto& n : root->children) {
-            post_order(n);
-        }
-        trav.push_back(root->val);
-    }
-    vector<int> postorder(Node* root) {
-        post_order(root);
-        return trav;
-    }
+   vector<int> result;
+   void post(Node* node) {
+      if (!node) return;
+      for (auto& child : node->children)
+         post(child);
+      result.push_back(node->val);
+   }
+public:
+   vector<int> postorder(Node* root) {
+      post(root);
+      return result;
+   }
 };
