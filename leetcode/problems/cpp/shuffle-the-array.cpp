@@ -1,16 +1,21 @@
 // by @codeAbinash
-// Time Complexity : O(n)
-// Space Complexity : O(n)
+// Time : O(n)
+// Space : O(n)
+
+
+#include "iostream"
+#include "vector"
+using namespace std;
+
 
 class Solution {
 public:
-    vector<int> shuffle(vector<int>& nums, int n) {
-        vector<int> result;
-        for(int i = 0; i < n ; i ++)      {
-            result.push_back(nums[i]);
-            result.push_back(nums[n + i]);
-
-        }
-        return result;
-    }
+   vector<int> shuffle(vector<int>& nums, int n) {
+      vector<int> ans(n * 2);
+      for (int i = 0, j = 0; i < n; i++, j += 2) {
+         ans[j] = nums[i];
+         ans[j + 1] = nums[i + n];
+      }
+      return ans;
+   }
 };
