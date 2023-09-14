@@ -1,13 +1,19 @@
 // by @codeAbinash
-// Time Complexity : O(1)
-// Space Complexity : O(1)
+// Time : O(1)
+// Space : O(1)
+
+#include "cstddef"
+
+struct ListNode {
+   int val;
+   ListNode* next;
+   ListNode(int x) : val(x), next(NULL) {}
+};
 
 class Solution {
 public:
-    void deleteNode(ListNode* node) {
-        ListNode *tmp = node->next;
-        node->val = node->next->val;
-        node->next = node->next->next;
-        delete tmp;        
-    }
+   void deleteNode(ListNode* node) {
+      node->val = node->next->val;
+      node->next = node->next->next;
+   }
 };
