@@ -1,15 +1,21 @@
 // by @codeAbinash
-// Time Complexity : O(n)
-// Space Complexity : O(1)
+// Time : O(n)
+// Space : O(n)
+
+#include "string"
+#include "unordered_set"
+using namespace std;
 
 class Solution {
-   public:
-    int numJewelsInStones(string jewels, string stones) {
-        bool j[128] = {0};
-        for (auto &c : jewels) j[c] = true;
-        int count = 0;
-        for (auto &c : stones)
-            if (j[c]) count++;
-        return count;
-    }
+public:
+   int numJewelsInStones(string jewels, string stones) {
+      int count = 0;
+      unordered_set<char> s;
+      for (auto ch : jewels)
+         s.insert(ch);
+      for (auto ch : stones)
+         if (s.find(ch) != s.end())
+            count++;
+      return count;
+   }
 };

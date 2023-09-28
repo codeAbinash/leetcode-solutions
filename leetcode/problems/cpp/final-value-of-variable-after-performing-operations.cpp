@@ -1,17 +1,18 @@
 // by @codeAbinash
-// Time Complexity : O(n)
-// Space Complexity : O(1)
+// Time : O(n)
+// Space : O(1)
+
+#include "vector"
+#include "string"
+using namespace std;
 
 class Solution {
 public:
-    int finalValueAfterOperations(vector<string>& operations) {
-        int value = 0;
-        for(auto &str : operations){
-            if(str == "++X" || str == "X++")
-                value++;
-            else
-                value--;
-        }
-        return value;
-    }
+   int finalValueAfterOperations(vector<string>& operations) {
+      int result = 0;
+      for (auto& op : operations) {
+         result += (op[1] == '+') ? 1 : -1;
+      }
+      return result;
+   }
 };

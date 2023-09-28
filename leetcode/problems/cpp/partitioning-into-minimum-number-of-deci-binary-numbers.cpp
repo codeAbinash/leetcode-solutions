@@ -1,12 +1,17 @@
 // by @codeAbinash
-// Time Complexity : O(n)
-// Space Complexity : O(1)
+// Time : O(n)
+// Space : O(1)
+
+#include "string"
+#include "algorithm"
+using namespace std;
 
 class Solution {
-   public:
-    int minPartitions(string n) {
-        char m = '0';
-        for (auto &i : n) m = max(m, i);
-        return m - '0';
-    }
+public:
+   int minPartitions(string n) {
+      int ans = 0;
+      for (auto ch : n)
+         ans = max(ans, ch - '0');
+      return ans;
+   }
 };
