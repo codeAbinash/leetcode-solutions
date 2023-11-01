@@ -1,22 +1,15 @@
-// by @codeAntu
-// timecomplexity o(logn)
-// spacecomplexity o(1)
+// by @codeAbinash
+// Time : O(log n)
+// Space : O(1)
 
+#include "climits"
 
-int mySqrt(int x) {
-   int high = x / 2 + 1, low = 0;
-   long mid;
-
-   while (high >= low)
-   {
-      mid = (high + low) / 2;
-      cout << mid << endl;
-      if (mid * mid == x)
-         return mid;
-      else if (mid * mid > x)
-         high = mid - 1;
-      else
-         low = mid + 1;
+class Solution {
+  public:
+   int mySqrt(int x) {
+      long root = x;
+      while (root * root > x)
+         root = (root + x / root) / 2;
+      return root;
    }
-   return high;
-}
+};
