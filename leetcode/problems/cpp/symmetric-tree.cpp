@@ -1,26 +1,25 @@
 // by @codeAbinash
 // Time : O(n)
-// Space : O(1)
+// Space : O(n)
 
 struct TreeNode {
    int val;
-   TreeNode* left;
-   TreeNode* right;
+   TreeNode *left;
+   TreeNode *right;
    TreeNode() : val(0), left(nullptr), right(nullptr) {}
    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-   TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+   TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
-public:
-   bool isSameTreeSymmetric(TreeNode* p, TreeNode* q) {
-      if (!q && !p) return true;
-      if (!q || !p) return false;
-      if (p->val == q->val)
-         return (isSameTreeSymmetric(p->left, q->right) && isSameTreeSymmetric(p->right, q->left));
-      return false;
+   bool isSymmetric(TreeNode *p, TreeNode *q) {
+      if (p == nullptr && q == nullptr) return true;
+      if (p == nullptr || q == nullptr) return false;
+      return p->val == q->val && isSymmetric(p->left, q->right) && isSymmetric(p->right, q->left);
    }
-   bool isSymmetric(TreeNode* root) {
-      return isSameTreeSymmetric(root->left, root->right);
+
+  public:
+   bool isSymmetric(TreeNode *root) {
+      return isSymmetric(root, root);
    }
 };
