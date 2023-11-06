@@ -1,19 +1,22 @@
-// by @codeAntu 
-// time complexcity o(n)
-// space complexcity o(1)
+// by @codeAbinash
+// Time : O(n)
+// Space : O(1)
 
+#include "vector"
+using namespace std;
 
-int maxProfit(vector<int>& prices) {
-      int n = prices.size();
-      int maxnum = prices[n-1];
-      int maxprofit = 0 ;
-      for (int i = n - 1; i >= 0 ; i--)
-      {
-         if (prices[i] > maxnum)
-            maxnum = prices[i];
-         if(maxnum - prices[i] > maxprofit)
-            maxprofit = maxnum - prices[i];
+class Solution {
+  public:
+   int maxProfit(vector<int>& prices) {
+      int min = prices[0], profit = 0, max = 0;
 
+      for (int i = 1; i < prices.size(); i++) {
+         if (prices[i] < min)
+            min = prices[i];
+         profit = prices[i] - min;
+         if (max < profit)
+            max = profit;
       }
-      return maxprofit;
+      return max;
    }
+};
