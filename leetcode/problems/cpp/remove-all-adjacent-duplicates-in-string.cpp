@@ -1,19 +1,20 @@
 // by @codeAbinash
-// Time Complexity : O(n)
-// Space Complexity : O(n)
+// Time : O(n)
+// Space : O(n)
+
+#include "string"
+using namespace std;
 
 class Solution {
-   public:
-    string removeDuplicates(string s) {
-        string f = "";
-        int len = s.length();
-
-        for (int i = 0; i < len; i++) {
-            if (f.length() == 0 || f[f.length() - 1] != s[i])
-                f.push_back(s[i]);
-            else
-                f.pop_back();
-        }
-        return f;
-    }
+  public:
+   string removeDuplicates(string s) {
+      string res;
+      for (char c : s) {
+         if (res.empty() || res.back() != c)
+            res.push_back(c);
+         else
+            res.pop_back();
+      }
+      return res;
+   }
 };
