@@ -1,0 +1,6 @@
+BasedOnStyle: Google
+IndentWidth: 3
+ColumnLimit: 100
+AccessModifierOffset: -2
+AlignTrailingComments: true
+AllowShortIfStatementsOnASingleLine: true
